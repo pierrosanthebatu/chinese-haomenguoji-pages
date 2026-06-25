@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豪门国际 · 可信站点介绍</title>
+    <style>
+        *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: #f3f9fc; 
+            color: #1c2f3f;
+            line-height: 1.6;
+            padding: 0 1.2rem;
+        }
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1.8rem 0 3.5rem;
+        }
+
+        /* -- 顶部导航 -- */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            padding: 0.8rem 0 1.2rem;
+            border-bottom: 1px solid #cde3e9;
+            margin-bottom: 2.5rem;
+        }
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #1a5f6b;
+            background: #d8eff3;
+            padding: 0.2rem 0.8rem;
+            border-radius: 32px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.2rem 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1c5967;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .nav-links a:hover { border-bottom-color: #4199aa; color: #083e4a; }
+
+        /* -- hero 区域 -- */
+        .hero {
+            background: linear-gradient(145deg, #e8f3f7, #d1e9f0);
+            padding: 2.8rem 2.5rem;
+            border-radius: 36px 12px 36px 12px;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 14px rgba(30, 70, 80, 0.06);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.3px;
+            color: #12424e;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+        .hero p {
+            max-width: 680px;
+            font-size: 1.1rem;
+            color: #1b4754;
+            margin-bottom: 1.3rem;
+        }
+        .hero .tag {
+            display: inline-block;
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            color: #135f6b;
+            border: 1px solid #add1db;
+        }
+
+        /* -- 网格卡片 (场景模块) -- */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 3rem 0 2.5rem;
+        }
+        .scene-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem 1.6rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(20, 60, 70, 0.06);
+            transition: transform 0.15s, box-shadow 0.2s;
+            border: 1px solid #e3f0f5;
+        }
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(40, 90, 105, 0.08);
+            border-color: #b7d8e3;
+        }
+        .scene-card .icon {
+            font-size: 1.9rem;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+            background: #e2f1f5;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 18px;
+        }
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 540;
+            color: #124f5c;
+            margin-bottom: 0.5rem;
+        }
+        .scene-card p {
+            color: #2b4f5b;
+            font-size: 0.95rem;
+        }
+
+        /* -- 介绍 + 说明区域 -- */
+        .intro-wrap {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            padding: 2rem 2.2rem;
+            border-radius: 30px;
+            margin: 2.2rem 0 2.8rem;
+            box-shadow: 0 2px 10px rgba(30, 60, 70, 0.04);
+            border: 1px solid #d3e6ed;
+        }
+        .intro-wrap h2 {
+            font-size: 1.6rem;
+            font-weight: 540;
+            color: #12505c;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.2px;
+        }
+        .intro-wrap p {
+            margin-bottom: 1.1rem;
+            color: #1c3c46;
+        }
+        .intro-wrap p:last-child { margin-bottom: 0; }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .faq-item {
+            background: #edf5f9;
+            padding: 0.9rem 1.3rem;
+            border-radius: 24px;
+            border-left: 4px solid #519dae;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #10434f;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item span {
+            font-size: 0.92rem;
+            color: #1b4c58;
+        }
+
+        /* -- 链接自然嵌入句子 -- */
+        .link-sentence {
+            background: #dff1f6;
+            padding: 1.2rem 1.8rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.05rem;
+            color: #10444f;
+        }
+        .link-sentence a {
+            color: #1b6f7e;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #84bbc9;
+            padding: 0 2px;
+            transition: background 0.1s;
+        }
+        .link-sentence a:hover {
+            background: #b7dbe6;
+            border-bottom-color: #2c8b9c;
+        }
+
+        /* -- 页脚 -- */
+        .footer {
+            margin-top: 3.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #c8dfe6;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            color: #3e6773;
+        }
+        .footer span { opacity: 0.8; }
+
+        /* -- 响应式 -- */
+        @media (max-width: 640px) {
+            body { padding: 0 0.8rem; }
+            .hero { padding: 2rem 1.4rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .intro-wrap { padding: 1.5rem 1.2rem; }
+            .nav { flex-direction: column; align-items: stretch; }
+            .nav-links { justify-content: center; }
+            .link-sentence { border-radius: 30px 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <header class="nav">
+        <div class="nav-brand">◈ 豪门国际</div>
+        <ul class="nav-links">
+            <li><a href="#intro">站点介绍</a></li>
+            <li><a href="#scenes">常见场景</a></li>
+            <li><a href="#faq">简要说明</a></li>
+        </ul>
+    </header>
+
+    <!-- hero 核心介绍 -->
+    <section class="hero">
+        <h1>关于 <span style="color:#0b5c6b;">豪门国际</span> 的站点笔记</h1>
+        <p>一个提供信息聚合与导航服务的线上平台，面向中文用户，设计上注重访问的清晰度与基础可信度。这里没有夸大宣传，只有对功能边界的如实描述。</p>
+        <span class="tag">站点定位 · 轻量导航</span>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes" class="scenes">
+        <article class="scene-card">
+            <div class="icon">📋</div>
+            <h3>信息查阅</h3>
+            <p>用户可通过分类索引快速定位相关内容，界面结构简洁，减少跳转步骤。适合日常资讯浏览与资源对照。</p>
+        </article>
+        <article class="scene-card">
+            <div class="icon">🔍</div>
+            <h3>功能引导</h3>
+            <p>提供基础的服务入口与说明，帮助初次访问者理解各模块用途。所有指引均保持中性、克制，不诱导操作。</p>
+        </article>
+        <article class="scene-card">
+            <div class="icon">🔄</div>
+            <h3>常规更新</h3>
+            <p>站点内容会依据实际运营阶段进行调整，部分说明页可能优化或合并，以提升信息查找的连贯性。</p>
+        </article>
+    </section>
+
+    <!-- 站点介绍 + 可信说明 -->
+    <div class="intro-wrap" id="intro">
+        <h2>站点概览与可信说明</h2>
+        <p><strong>豪门国际</strong> 是一个面向中文访问者的信息型站点，并非交易或金融平台。页面上展示的内容均以介绍、说明或导航为出发点，不包含对收益、效果的承诺或暗示。</p>
+        <p>本站的运营方重视用户的基本知情权，因此在每个主要版块都尽量提供清晰的分类和简要解释。如果您需要了解更具体的功能或服务范围，建议直接浏览站内相关说明页。</p>
+        <p>对于任何第三方链接或外部引用，<strong>豪门国际</strong> 不承担背书责任，用户应自行判断信息真实性。我们保持克制的叙述风格，力求避免模糊或夸大的措辞。</p>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini" id="faq">
+            <div class="faq-item">
+                <strong>▸ 这个网站主要做什么？</strong>
+                <span>提供信息分类与导航，帮助用户快速找到对应内容。不涉及交易、投资建议或实时数据。</span>
+            </div>
+            <div class="faq-item">
+                <strong>▸ 内容是否可靠？</strong>
+                <span>所有描述均基于站点实际功能，不虚构数据或效果。建议遇到疑问时参考官方说明或联系运营方。</span>
+            </div>
+            <div class="faq-item">
+                <strong>▸ 是否会收集个人信息？</strong>
+                <span>基础浏览不需要注册或提交隐私信息。具体条款以站内隐私说明为准。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然嵌入链接的句子（a标签可见文本严格等于「豪门国际」） -->
+    <div class="link-sentence">
+        💡 如果您希望直接访问该平台，可以通过链接前往 
+        <a href="https://chinese-haomenguoji.com">豪门国际</a> 
+        ，查阅完整的导航页面与分类介绍。
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <span>© 豪门国际 · 说明页</span>
+        <span>内容保持真实 · 仅供参考</span>
+    </footer>
+
+</div>
+</body>
+</html>
